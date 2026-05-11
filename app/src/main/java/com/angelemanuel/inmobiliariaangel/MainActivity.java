@@ -1,10 +1,15 @@
 package com.angelemanuel.inmobiliariaangel;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
 
+import com.angelemanuel.inmobiliariaangel.ui.login.LoginActivity;
 import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AlertDialog;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -47,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
         binding.navView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_logout) {
-                // Handle Logout
-                finish();
+                mostrarDialogoLogout();
                 return true;
             }
             // Default navigation behavior
@@ -58,6 +62,22 @@ public class MainActivity extends AppCompatActivity {
             }
             return handled;
         });
+    }
+
+    private void mostrarDialogoLogout() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.dialog_logout_title)
+                .setMessage(R.string.dialog_logout_message)
+                .setPositiveButton(R.string.dialog_logout_yes, (dialog, which) -> {
+                    SharedPreferences sp = getSharedPreferences("auth_prefs", Context.MODE_PRIVATE);
+                    sp.edit().clear().apply();
+
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                })
+                .setNegativeButton(R.string.dialog_logout_no, (dialog, which) -> dialog.dismiss())
+                .show();
     }
 
     @Override

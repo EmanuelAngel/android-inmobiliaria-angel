@@ -14,6 +14,11 @@
     <string name="menu_contratos">Contratos</string>
     <string name="menu_logout">Cerrar Sesión</string>
 
+    <string name="dialog_logout_title">Cerrar sesión</string>
+    <string name="dialog_logout_message">¿Estás seguro que deseas cerrar sesión?</string>
+    <string name="dialog_logout_yes">Sí</string>
+    <string name="dialog_logout_no">No</string>
+
     <string name="menu_transform">Transform</string>
     <string name="menu_reflow">Reflow</string>
     <string name="menu_slideshow">Slideshow</string>

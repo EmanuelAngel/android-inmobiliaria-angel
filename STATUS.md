@@ -3,7 +3,7 @@
 Este documento detalla los requerimientos mínimos, las fechas de entrega y el progreso actual del proyecto.
 
 ## Requerimientos Mínimos
-- [ ] Login/logout de propietarios.
+- [x] Login/logout de propietarios. (Logout implementado con diálogo de confirmación)
 - [ ] Ver y editar perfil del propietario.
 - [ ] Cambio de contraseña por separado.
 - [ ] Resetear contraseña ("olvidé mi contraseña").
