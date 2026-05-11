@@ -5,9 +5,7 @@ plugins {
 android {
     namespace = "com.angelemanuel.inmobiliariaangel"
     compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
+        version = release(36)
     }
 
     defaultConfig {
@@ -49,6 +47,7 @@ dependencies {
     implementation(libs.navigation.ui)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.converter.scalars)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
