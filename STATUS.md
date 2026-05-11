@@ -17,8 +17,8 @@ Este documento detalla los requerimientos mínimos, las fechas de entrega y el p
 
 ### Primera Entrega (10/05/2026)
 - [x] Login (Interfaz/Estructura).
-- [ ] Menú navegable (Drawer/BottomNav con opciones).
-- **Estado:** En progreso. Se completó la funcionalidad de Login (UI, Retrofit, SharedPreferences).
+- [x] Menú navegable (Drawer implementado, BottomNav removido).
+- **Estado:** Primera entrega completada (Estructura y Navegación).
 
 ### Segunda Entrega (17/05/2026)
 - [ ] Funcionalidad de Login (Auth con API).
