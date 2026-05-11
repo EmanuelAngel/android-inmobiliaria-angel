@@ -4,7 +4,7 @@ Sistema de gestión inmobiliaria para propietarios.
 
 ## Demostración - Primera Entrega
 
-*(Incrustar link al video aquí)*
+https://github.com/user-attachments/assets/fd64fd0b-24f1-4abf-aaf4-b4b65ca5c332
 
 ### Flujo de la Demostración
 
