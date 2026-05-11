@@ -16,9 +16,9 @@ Este documento detalla los requerimientos mínimos, las fechas de entrega y el p
 ## Cronograma de Entregas
 
 ### Primera Entrega (10/05/2026)
-- [ ] Login (Interfaz/Estructura).
+- [x] Login (Interfaz/Estructura).
 - [ ] Menú navegable (Drawer/BottomNav con opciones).
-- **Estado:** En progreso.
+- **Estado:** En progreso. Se completó la funcionalidad de Login (UI, Retrofit, SharedPreferences).
 
 ### Segunda Entrega (17/05/2026)
 - [ ] Funcionalidad de Login (Auth con API).

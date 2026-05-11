@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "8b2a3f4e-1234-4567-890a-bcdef1234567",
+		"name": "Inmobiliaria API",
+		"description": "Colección para la API de Inmobiliaria Angel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Usuario",
+							"value": "luisprofessor@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "Clave",
+							"value": "DEEKQW",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://capacitacion.alwaysdata.net/api/Propietarios/login",
+					"protocol": "https",
+					"host": [
+						"capacitacion",
+						"alwaysdata",
+						"net"
+					],
+					"path": [
+						"api",
+						"Propietarios",
+						"login"
+					]
+				},
+				"description": "Inicia sesión del propietario y devuelve un token de autorización."
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Perfil",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://capacitacion.alwaysdata.net/api/Propietarios",
+					"protocol": "https",
+					"host": [
+						"capacitacion",
+						"alwaysdata",
+						"net"
+					],
+					"path": [
+						"api",
+						"Propietarios"
+					]
+				},
+				"description": "Devuelve los datos del propietario autenticado."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "pega_aqui_tu_token",
+			"type": "string"
+		}
+	]
+}
