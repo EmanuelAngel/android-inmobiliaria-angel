@@ -27,6 +27,7 @@ Sistema de gestión inmobiliaria para el proyecto integrador de la asignatura "D
 
 ## Workflow & Conventions
 - **Commits:** Seguir estrictamente **Conventional Commits** (ej: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`).
+- **Status Tracking:** Mantener actualizado el archivo `STATUS.md` en la raíz del proyecto tras completar cada hito o funcionalidad de una entrega.
 - **Idioma:** Todo el código (comentarios, logs, strings de la UI) debe estar en **Español**. No es necesaria la internacionalización.
 - **Testing:** No se requieren pruebas unitarias ni instrumentales por el momento.
 
