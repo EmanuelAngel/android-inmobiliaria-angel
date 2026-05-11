@@ -26,7 +26,7 @@ Sistema de gestión inmobiliaria para el proyecto integrador de la asignatura "D
 - **Session Management:** Ante errores de red críticos o sesión expirada (HTTP 401), la aplicación debe invalidar el token local y redirigir inmediatamente al `LoginActivity`.
 
 ## Workflow & Conventions
-- **Commits:** Seguir estrictamente **Conventional Commits** (ej: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`).
+- **Commits:** Seguir estrictamente **Conventional Commits** (ej: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`). **Los mensajes de commit deben ser siempre en inglés.**
 - **Status Tracking:** Mantener actualizado el archivo `STATUS.md` en la raíz del proyecto tras completar cada hito o funcionalidad de una entrega.
 - **Idioma:** Todo el código (comentarios, logs, strings de la UI) debe estar en **Español**. No es necesaria la internacionalización.
 - **Testing:** No se requieren pruebas unitarias ni instrumentales por el momento.
