@@ -1,16 +1,16 @@
-package com.angelemanuel.inmobiliariaangel.ui.reflow;
+package com.angelemanuel.inmobiliariaangel.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ReflowViewModel extends ViewModel {
+public class HomeViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public ReflowViewModel() {
+    public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is reflow fragment");
+        mText.setValue("Este es el Fragment de Inicio");
     }
 
     public LiveData<String> getText() {

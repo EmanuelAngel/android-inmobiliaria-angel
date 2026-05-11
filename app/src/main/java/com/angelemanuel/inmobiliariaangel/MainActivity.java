@@ -38,11 +38,26 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_transform, R.id.nav_reflow, R.id.nav_slideshow, R.id.nav_settings)
+                R.id.nav_home, R.id.nav_perfil, R.id.nav_inmuebles, R.id.nav_inquilinos, R.id.nav_contratos)
                 .setOpenableLayout(binding.drawerLayout)
                 .build();
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        binding.navView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_logout) {
+                // Handle Logout
+                finish();
+                return true;
+            }
+            // Default navigation behavior
+            boolean handled = NavigationUI.onNavDestinationSelected(item, navController);
+            if (handled) {
+                binding.drawerLayout.closeDrawers();
+            }
+            return handled;
+        });
     }
 
     @Override

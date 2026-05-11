@@ -1,4 +1,4 @@
-package com.angelemanuel.inmobiliariaangel.ui.settings;
+package com.angelemanuel.inmobiliariaangel.ui.inmuebles;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.angelemanuel.inmobiliariaangel.databinding.FragmentSettingsBinding;
+import com.angelemanuel.inmobiliariaangel.databinding.FragmentInmueblesBinding;
 
-public class SettingsFragment extends Fragment {
+public class InmueblesFragment extends Fragment {
 
-    private FragmentSettingsBinding binding;
+    private FragmentInmueblesBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SettingsViewModel settingsViewModel =
-                new ViewModelProvider(this).get(SettingsViewModel.class);
+        InmueblesViewModel inmueblesViewModel =
+                new ViewModelProvider(this).get(InmueblesViewModel.class);
 
-        binding = FragmentSettingsBinding.inflate(inflater, container, false);
+        binding = FragmentInmueblesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSettings;
-        settingsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textInmuebles;
+        inmueblesViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

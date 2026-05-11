@@ -1,16 +1,16 @@
-package com.angelemanuel.inmobiliariaangel.ui.settings;
+package com.angelemanuel.inmobiliariaangel.ui.inquilinos;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SettingsViewModel extends ViewModel {
+public class InquilinosViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public SettingsViewModel() {
+    public InquilinosViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is settings fragment");
+        mText.setValue("Este es el Fragment de Inquilinos");
     }
 
     public LiveData<String> getText() {
