@@ -33,6 +33,12 @@ public class LoginActivity extends AppCompatActivity {
 
         setupObservers();
         setupListeners();
+        prefillCredentials();
+    }
+
+    private void prefillCredentials() {
+        binding.etEmail.setText("luisprofessor@gmail.com");
+        binding.etPassword.setText("DEEKQW");
     }
 
     private boolean checkToken() {
