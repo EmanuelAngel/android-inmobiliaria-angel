@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 
 public interface PropietarioService {
-    @GET("api/Propietarios/perfil")
+    @GET("api/Propietarios")
     Call<Propietario> getPerfil(@Header("Authorization") String token);
 }
