@@ -7,6 +7,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class ApiClient {
     private static final String BASE_URL = "https://capacitacion.alwaysdata.net/";
     private static AuthService authService;
+    private static PropietarioService propietarioService;
 
     /**
      * Obtiene una instancia única de AuthService.
@@ -26,5 +27,16 @@ public class ApiClient {
             authService = retrofit.create(AuthService.class);
         }
         return authService;
+    }
+
+    public static PropietarioService getPropietarioService() {
+        if (propietarioService == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            propietarioService = retrofit.create(PropietarioService.class);
+        }
+        return propietarioService;
     }
 }

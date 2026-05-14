@@ -47,16 +47,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setupObservers() {
-        loginViewModel.getTokenLiveData().observe(this, token -> {
+        loginViewModel.getToken().observe(this, token -> {
             saveToken(token);
             navigateToMain();
         });
 
-        loginViewModel.getErrorLiveData().observe(this, error -> {
+        loginViewModel.getError().observe(this, error -> {
             Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
         });
 
-        loginViewModel.getLoadingLiveData().observe(this, isLoading -> {
+        loginViewModel.getLoading().observe(this, isLoading -> {
             binding.pbLoading.setVisibility(isLoading ? View.VISIBLE : View.GONE);
             binding.btnLogin.setEnabled(!isLoading);
         });
@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.btnLogin.setOnClickListener(v -> {
             String email = binding.etEmail.getText().toString();
             String pass = binding.etPassword.getText().toString();
-            loginViewModel.login(email, pass);
+            loginViewModel.autenticar(email, pass);
         });
     }
 

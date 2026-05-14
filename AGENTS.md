@@ -34,3 +34,6 @@ Sistema de gestión inmobiliaria para el proyecto integrador de la asignatura "D
 ## Instrucciones Específicas del Curso
 - Priorizar la simplicidad y la legibilidad académica.
 - Tener en cuenta que el modelo relacional y de API definido en la carpeta `docs/` es un ejemplo, no el modelo final y real.
+
+## Skills del Proyecto
+- **naming-convention:** Aplica las reglas de nomenclatura híbrida (Español negocio/Inglés técnico) y sufijos de LiveData. Ubicación: `.gemini/skills/naming-convention/SKILL.md`.

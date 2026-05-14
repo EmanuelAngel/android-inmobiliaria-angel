@@ -16,54 +16,54 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginViewModel extends AndroidViewModel {
-    private MutableLiveData<String> tokenLiveData;
-    private MutableLiveData<String> errorLiveData;
-    private MutableLiveData<Boolean> loadingLiveData;
+    private MutableLiveData<String> tokenMutable;
+    private MutableLiveData<String> errorMutable;
+    private MutableLiveData<Boolean> loadingMutable;
 
     public LoginViewModel(@NonNull Application application) {
         super(application);
     }
 
-    public LiveData<String> getTokenLiveData() {
-        if (tokenLiveData == null) tokenLiveData = new MutableLiveData<>();
-        return tokenLiveData;
+    public LiveData<String> getToken() {
+        if (tokenMutable == null) tokenMutable = new MutableLiveData<>();
+        return tokenMutable;
     }
 
-    public LiveData<String> getErrorLiveData() {
-        if (errorLiveData == null) errorLiveData = new MutableLiveData<>();
-        return errorLiveData;
+    public LiveData<String> getError() {
+        if (errorMutable == null) errorMutable = new MutableLiveData<>();
+        return errorMutable;
     }
 
-    public LiveData<Boolean> getLoadingLiveData() {
-        if (loadingLiveData == null) loadingLiveData = new MutableLiveData<>();
-        return loadingLiveData;
+    public LiveData<Boolean> getLoading() {
+        if (loadingMutable == null) loadingMutable = new MutableLiveData<>();
+        return loadingMutable;
     }
 
-    public void login(String usuario, String clave) {
+    public void autenticar(String usuario, String clave) {
         if (usuario.isEmpty() || clave.isEmpty()) {
-            errorLiveData.setValue("Usuario y clave son obligatorios");
+            errorMutable.setValue("Usuario y clave son obligatorios");
             return;
         }
 
-        loadingLiveData.setValue(true);
+        loadingMutable.setValue(true);
         AuthService authService = ApiClient.getAuthService();
         Call<String> call = authService.login(usuario, clave);
 
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                loadingLiveData.postValue(false);
+                loadingMutable.postValue(false);
                 if (response.isSuccessful() && response.body() != null) {
-                    tokenLiveData.postValue(response.body());
+                    tokenMutable.postValue(response.body());
                 } else {
-                    errorLiveData.postValue("Usuario o clave incorrectos");
+                    errorMutable.postValue("Usuario o clave incorrectos");
                 }
             }
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                loadingLiveData.postValue(false);
-                errorLiveData.postValue("Error de red: " + t.getMessage());
+                loadingMutable.postValue(false);
+                errorMutable.postValue("Error de red: " + t.getMessage());
                 Log.e("LoginError", t.getMessage());
             }
         });
