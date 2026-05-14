@@ -47,16 +47,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setupObservers() {
-        loginViewModel.getToken().observe(this, token -> {
+        loginViewModel.getTokenMutable().observe(this, token -> {
             saveToken(token);
             navigateToMain();
         });
 
-        loginViewModel.getError().observe(this, error -> {
+        loginViewModel.getErrorMutable().observe(this, error -> {
             Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
         });
 
-        loginViewModel.getLoading().observe(this, isLoading -> {
+        loginViewModel.getLoadingMutable().observe(this, isLoading -> {
             binding.pbLoading.setVisibility(isLoading ? View.VISIBLE : View.GONE);
             binding.btnLogin.setEnabled(!isLoading);
         });

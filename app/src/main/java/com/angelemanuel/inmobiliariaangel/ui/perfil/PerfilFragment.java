@@ -33,13 +33,13 @@ public class PerfilFragment extends Fragment {
     }
 
     private void setupObservers() {
-        perfilViewModel.getPropietario().observe(getViewLifecycleOwner(), propietario -> {
+        perfilViewModel.getPropietarioMutable().observe(getViewLifecycleOwner(), propietario -> {
             if (propietario != null) {
                 llenarCampos(propietario);
             }
         });
 
-        perfilViewModel.getError().observe(getViewLifecycleOwner(), error -> {
+        perfilViewModel.getErrorMutable().observe(getViewLifecycleOwner(), error -> {
             if (error != null && !error.isEmpty()) {
                 Toast.makeText(getContext(), error, Toast.LENGTH_LONG).show();
             }

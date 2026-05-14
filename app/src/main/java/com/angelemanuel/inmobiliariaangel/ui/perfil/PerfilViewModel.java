@@ -27,14 +27,14 @@ public class PerfilViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public LiveData<Propietario> getPropietario() {
+    public LiveData<Propietario> getPropietarioMutable() {
         if (propietarioMutable == null) {
             propietarioMutable = new MutableLiveData<>();
         }
         return propietarioMutable;
     }
 
-    public LiveData<String> getError() {
+    public LiveData<String> getErrorMutable() {
         if (errorMutable == null) {
             errorMutable = new MutableLiveData<>();
         }

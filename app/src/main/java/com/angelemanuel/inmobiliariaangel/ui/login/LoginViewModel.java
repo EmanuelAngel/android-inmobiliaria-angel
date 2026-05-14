@@ -24,17 +24,17 @@ public class LoginViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public LiveData<String> getToken() {
+    public LiveData<String> getTokenMutable() {
         if (tokenMutable == null) tokenMutable = new MutableLiveData<>();
         return tokenMutable;
     }
 
-    public LiveData<String> getError() {
+    public LiveData<String> getErrorMutable() {
         if (errorMutable == null) errorMutable = new MutableLiveData<>();
         return errorMutable;
     }
 
-    public LiveData<Boolean> getLoading() {
+    public LiveData<Boolean> getLoadingMutable() {
         if (loadingMutable == null) loadingMutable = new MutableLiveData<>();
         return loadingMutable;
     }

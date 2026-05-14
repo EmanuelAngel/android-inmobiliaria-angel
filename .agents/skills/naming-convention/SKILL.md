@@ -14,7 +14,7 @@ Activar cuando se creen nuevos componentes (ViewModels, Fragments, Activities), 
 - **Variables de Clase:** 
   - Usar `camelCase`.
   - Prohibido el uso de prefijos como `m` o `_`.
-  - **MutableLiveData/LiveData:** Obligatorio el sufijo `Mutable` (ej: `errorMutable`, `tokenMutable`).
+  - **MutableLiveData/LiveData:** Obligatorio el sufijo `Mutable` tanto en la variable como en su getter (ej: variable `errorMutable`, getter `getErrorMutable()`).
 - **Idioma Híbrido:**
   - **Dominio/Negocio:** Siempre en **Español** (`propietario`, `contrato`, `inmueble`).
   - **Términos Técnicos:** En **Inglés** (`loading`, `token`, `error`, `setup`, `observers`).
