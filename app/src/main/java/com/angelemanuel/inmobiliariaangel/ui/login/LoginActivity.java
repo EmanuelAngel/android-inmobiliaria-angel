@@ -48,7 +48,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setupObservers() {
         loginViewModel.getTokenMutable().observe(this, token -> {
-            saveToken(token);
             navigateToMain();
         });
 
@@ -68,13 +67,6 @@ public class LoginActivity extends AppCompatActivity {
             String pass = binding.etPassword.getText().toString();
             loginViewModel.autenticar(email, pass);
         });
-    }
-
-    private void saveToken(String token) {
-        SharedPreferences sp = getSharedPreferences("auth_prefs", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString("token", "Bearer " + token);
-        editor.apply();
     }
 
     private void navigateToMain() {

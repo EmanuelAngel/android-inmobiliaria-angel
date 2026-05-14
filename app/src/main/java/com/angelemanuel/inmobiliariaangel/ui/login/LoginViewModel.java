@@ -1,6 +1,8 @@
 package com.angelemanuel.inmobiliariaangel.ui.login;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -54,7 +56,9 @@ public class LoginViewModel extends AndroidViewModel {
             public void onResponse(Call<String> call, Response<String> response) {
                 loadingMutable.postValue(false);
                 if (response.isSuccessful() && response.body() != null) {
-                    tokenMutable.postValue(response.body());
+                    String token = response.body();
+                    saveToken(token);
+                    tokenMutable.postValue(token);
                 } else {
                     errorMutable.postValue("Usuario o clave incorrectos");
                 }
@@ -67,5 +71,12 @@ public class LoginViewModel extends AndroidViewModel {
                 Log.e("LoginError", t.getMessage());
             }
         });
+    }
+
+    private void saveToken(String token) {
+        SharedPreferences sp = getApplication().getSharedPreferences("auth_prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("token", "Bearer " + token);
+        editor.apply();
     }
 }
