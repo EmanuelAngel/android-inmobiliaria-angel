@@ -25,7 +25,8 @@ Este documento detalla los requerimientos mínimos, las fechas de entrega y el p
 - [ ] Ubicación (Mapa en Fragment Inicio).
 - [ ] Ver Perfil.
 - [ ] Editar Perfil.
-- **Estado:** Pendiente.
+- [x] Modelo de dominio Propietario.
+- **Estado:** En progreso.
 
 ### Tercera Entrega (24/05/2026)
 - [ ] Listado de Inmuebles.
