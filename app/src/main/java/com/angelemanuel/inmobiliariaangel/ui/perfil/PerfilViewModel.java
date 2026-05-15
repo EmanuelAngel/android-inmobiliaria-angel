@@ -50,15 +50,17 @@ public class PerfilViewModel extends AndroidViewModel {
             public void onResponse(Call<Propietario> call, Response<Propietario> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     propietarioMutable.postValue(response.body());
+                } else if (response.code() == 401) {
+                    errorMutable.postValue("Sesión expirada, inicia sesión de nuevo");
                 } else {
-                    errorMutable.postValue("Error al cargar perfil: " + response.code());
-                    Log.e("PerfilViewModel", "Error: " + response.message());
+                    errorMutable.postValue("Error al cargar los datos del perfil");
+                    Log.e("PerfilViewModel", "Error: " + response.code());
                 }
             }
 
             @Override
             public void onFailure(Call<Propietario> call, Throwable t) {
-                errorMutable.postValue("Error de red: " + t.getMessage());
+                errorMutable.postValue("No se pudo conectar con el servidor");
                 Log.e("PerfilViewModel", "Failure: " + t.getMessage());
             }
         });

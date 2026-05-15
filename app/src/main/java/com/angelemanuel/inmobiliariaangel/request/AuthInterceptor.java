@@ -50,9 +50,8 @@ public class AuthInterceptor implements Interceptor {
             // Limpiamos los datos de autenticación locales
             sp.edit().clear().apply();
             
-            // Redirigimos al LoginActivity con un mensaje amigable
+            // Redirigimos al LoginActivity de forma directa (el ViewModel o Login mostrarán el mensaje si es necesario)
             Intent intent = new Intent(context, LoginActivity.class);
-            intent.putExtra("mensaje", "Sesión expirada, inicia sesión de nuevo");
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             context.startActivity(intent);
         }
