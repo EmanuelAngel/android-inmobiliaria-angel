@@ -42,16 +42,8 @@ public class PerfilViewModel extends AndroidViewModel {
     }
 
     public void cargarPerfil() {
-        SharedPreferences sp = getApplication().getSharedPreferences("auth_prefs", Context.MODE_PRIVATE);
-        String token = sp.getString("token", "");
-
-        if (token.isEmpty()) {
-            errorMutable.setValue("Sesión no válida");
-            return;
-        }
-
-        PropietarioService service = ApiClient.getPropietarioService();
-        Call<Propietario> call = service.getPerfil(token);
+        PropietarioService service = ApiClient.getPropietarioService(getApplication());
+        Call<Propietario> call = service.getPerfil();
 
         call.enqueue(new Callback<Propietario>() {
             @Override

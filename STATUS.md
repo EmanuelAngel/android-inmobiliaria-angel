@@ -21,12 +21,12 @@ Este documento detalla los requerimientos mínimos, las fechas de entrega y el p
 - **Estado:** Primera entrega completada (Estructura y Navegación).
 
 ### Segunda Entrega (17/05/2026)
-- [ ] Funcionalidad de Login (Auth con API).
+- [x] Funcionalidad de Login (Auth con API).
 - [ ] Ubicación (Mapa en Fragment Inicio).
-- [ ] Ver Perfil.
+- [x] Ver Perfil.
 - [ ] Editar Perfil.
 - [x] Modelo de dominio Propietario.
-- **Estado:** En progreso.
+- **Estado:** En progreso. (Auth Interceptor y seguridad implementados)
 
 ### Tercera Entrega (24/05/2026)
 - [ ] Listado de Inmuebles.
