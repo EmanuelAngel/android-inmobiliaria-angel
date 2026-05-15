@@ -52,7 +52,7 @@ public class AuthInterceptor implements Interceptor {
             
             // Redirigimos al LoginActivity con un mensaje amigable
             Intent intent = new Intent(context, LoginActivity.class);
-            intent.putExtra("mensaje", "Su sesión ha expirado por seguridad. Por favor, ingrese sus credenciales nuevamente.");
+            intent.putExtra("mensaje", "Sesión expirada, inicia sesión de nuevo");
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             context.startActivity(intent);
         }
