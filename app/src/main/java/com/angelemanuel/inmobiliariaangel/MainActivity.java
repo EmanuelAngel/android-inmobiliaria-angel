@@ -39,9 +39,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        if (binding.appBarMain.fab != null) {
-            binding.appBarMain.fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).setAnchorView(R.id.fab).show());
+        if (binding.appBarMain.fabDevTools != null) {
+            binding.appBarMain.fabDevTools.setOnClickListener(view -> mostrarDialogoDevTools());
         }
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
         assert navHostFragment != null;
@@ -118,5 +117,42 @@ public class MainActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
+    }
+
+    /**
+     * Muestra un diálogo con herramientas de desarrollo para probar la seguridad.
+     */
+    private void mostrarDialogoDevTools() {
+        String[] opciones = {"Invalidar Token (Simular 401)", "Ver Token Actual"};
+        new AlertDialog.Builder(this)
+                .setTitle("Herramientas de Desarrollo")
+                .setItems(opciones, (dialog, which) -> {
+                    if (which == 0) {
+                        invalidarToken();
+                    } else if (which == 1) {
+                        verToken();
+                    }
+                })
+                .show();
+    }
+
+    private void invalidarToken() {
+        SharedPreferences sp = getSharedPreferences("auth_prefs", Context.MODE_PRIVATE);
+        // Corrompemos el token para que el servidor devuelva 401
+        sp.edit().putString("token", "Bearer token_invalido_de_prueba").apply();
+        
+        Snackbar.make(findViewById(android.R.id.content), 
+                "Token invalidado. Navega a cualquier sección para activar el 401.", 
+                Snackbar.LENGTH_LONG).show();
+    }
+
+    private void verToken() {
+        SharedPreferences sp = getSharedPreferences("auth_prefs", Context.MODE_PRIVATE);
+        String token = sp.getString("token", "No hay token");
+        new AlertDialog.Builder(this)
+                .setTitle("Token Actual")
+                .setMessage(token)
+                .setPositiveButton("OK", null)
+                .show();
     }
 }

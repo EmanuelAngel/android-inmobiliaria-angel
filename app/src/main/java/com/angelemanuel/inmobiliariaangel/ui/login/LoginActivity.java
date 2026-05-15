@@ -29,6 +29,12 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Verificamos si venimos de un cierre de sesión forzado (sesión expirada)
+        String mensaje = getIntent().getStringExtra("mensaje");
+        if (mensaje != null) {
+            Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
+        }
+
         loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
         setupObservers();
