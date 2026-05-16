@@ -1,0 +1,446 @@
+{
+  "info": {
+    "_postman_id": "9ca87ac4-8f19-4fbf-b4da-39571eb6596b",
+    "name": "API-Inmobiliaria",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "9535014"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "Usuario",
+              "value": "luisprofessor@gmail.com",
+              "type": "default"
+            },
+            {
+              "key": "Clave",
+              "value": "DEEKQW",
+              "type": "default"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/propietarios/login",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "propietarios",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Propietario",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgSmF2aWVyIE1lcmNhZG8iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9waWV0YXJpbyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTc3ODcxNzEyMiwiaXNzIjoiaW5tb2JpbGlhcmlhVUxQIiwiYXVkIjoibW9iaWxlQVBQIn0.r_ylFC3ZgThb3m2fcPy3IoeVHOrbvnrTgJ2LI8JB8AE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/propietarios",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "propietarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActualizarPropietario",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgSmF2aWVyIE1lcmNhZG8iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9waWV0YXJpbyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTc3ODcxNzEyMiwiaXNzIjoiaW5tb2JpbGlhcmlhVUxQIiwiYXVkIjoibW9iaWxlQVBQIn0.r_ylFC3ZgThb3m2fcPy3IoeVHOrbvnrTgJ2LI8JB8AE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"idPropietario\": 3,\r\n    \"nombre\": \"Luis Javier\",\r\n    \"apellido\": \"Rodriguez\",\r\n    \"dni\": \"171717\",\r\n    \"telefono\": \"1125254141\",\r\n    \"email\": \"luisprofessor@gmail.com\"\r\n   \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/propietarios/actualizar",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "propietarios",
+            "actualizar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CambiarContraseña",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgUGFibGl0byBNZXJjYWRvIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiUHJvcGlldGFyaW8iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJleHAiOjE3Nzg2OTk0OTMsImlzcyI6ImlubW9iaWxpYXJpYVVMUCIsImF1ZCI6Im1vYmlsZUFQUCJ9.pRXKT6xUMXcZ1ObSycW5JJD1FYsNj57dJ6LRU3UzHk0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "currentPassword",
+              "value": "DEEKQW",
+              "type": "text",
+              "uuid": "9cbbd18c-6661-475a-8604-c233f7ba7536"
+            },
+            {
+              "key": "newPassword",
+              "value": "12345678",
+              "type": "text",
+              "uuid": "206b6e7e-e771-435d-b255-97814bd2b290"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/Propietarios/changePassword",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "Propietarios",
+            "changePassword"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Inmuebles",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgSmF2aWVyIE1lcmNhZG8iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9waWV0YXJpbyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTc3ODcxNzEyMiwiaXNzIjoiaW5tb2JpbGlhcmlhVUxQIiwiYXVkIjoibW9iaWxlQVBQIn0.r_ylFC3ZgThb3m2fcPy3IoeVHOrbvnrTgJ2LI8JB8AE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/inmuebles",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "inmuebles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CambiaDisponibilidad",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgSmF2aWVyIE1lcmNhZG8iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9waWV0YXJpbyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTc3ODcxNzEyMiwiaXNzIjoiaW5tb2JpbGlhcmlhVUxQIiwiYXVkIjoibW9iaWxlQVBQIn0.r_ylFC3ZgThb3m2fcPy3IoeVHOrbvnrTgJ2LI8JB8AE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"idInmueble\": 1,\r\n        \"direccion\": null,\r\n        \"uso\": null,\r\n        \"tipo\": null,\r\n        \"ambientes\": 0,\r\n        \"superficie\": 0,\r\n        \"latitud\": 0,\r\n        \"valor\": 0,\r\n        \"imagen\": null,\r\n        \"disponible\": false,//solo cambio el estado de disponibilidad\r\n        \"longitud\": 0,\r\n        \"idPropietario\": 0,\r\n        \"duenio\": null,\r\n        \"tieneContratoVigente\": false\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/Inmuebles/actualizar",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "Inmuebles",
+            "actualizar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CargarInmueble",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgSmF2aWVyIE1lcmNhZG8iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9waWV0YXJpbyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTc3ODcxNzEyMiwiaXNzIjoiaW5tb2JpbGlhcmlhVUxQIiwiYXVkIjoibW9iaWxlQVBQIn0.r_ylFC3ZgThb3m2fcPy3IoeVHOrbvnrTgJ2LI8JB8AE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "imagen",
+              "type": "file",
+              "src": "/C:/Users/DELL/Downloads/inmueble1.jpg"
+            },
+            {
+              "key": "inmueble",
+              "value": "{\"direccion\": \"Saladillo 234\",\"uso\": \"Residencial\", \"tipo\": \"Departamento\", \"ambientes\": 3, \"superficie\": 200,        \"latitud\": 2.0, \"valor\": 175800, \"disponible\": true, \"longitud\": 3.0  }",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/Inmuebles/cargar",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "Inmuebles",
+            "cargar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "InmueblesAlquilados",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgSmF2aWVyIE1lcmNhZG8iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9waWV0YXJpbyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTc3ODcxNzEyMiwiaXNzIjoiaW5tb2JpbGlhcmlhVUxQIiwiYXVkIjoibW9iaWxlQVBQIn0.r_ylFC3ZgThb3m2fcPy3IoeVHOrbvnrTgJ2LI8JB8AE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/Inmuebles/GetContratoVigente",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "Inmuebles",
+            "GetContratoVigente"
+          ]
+        },
+        "description": "**Este endpoint devuelve la lista de los inmuebles alquilados (los que tienen contrato vigente)**"
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener Contrato por Inmueble",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgSmF2aWVyIE1lcmNhZG8iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9waWV0YXJpbyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTc3ODcxNzEyMiwiaXNzIjoiaW5tb2JpbGlhcmlhVUxQIiwiYXVkIjoibW9iaWxlQVBQIn0.r_ylFC3ZgThb3m2fcPy3IoeVHOrbvnrTgJ2LI8JB8AE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/contratos/inmueble/3",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "contratos",
+            "inmueble",
+            "3"
+          ]
+        },
+        "description": "**Este endpoint devuelve un Contrato dado el id de un inmueble.**"
+      },
+      "response": []
+    },
+    {
+      "name": "PagosPorContrato",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgSmF2aWVyIE1lcmNhZG8iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9waWV0YXJpbyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTc3ODcxNzEyMiwiaXNzIjoiaW5tb2JpbGlhcmlhVUxQIiwiYXVkIjoibW9iaWxlQVBQIn0.r_ylFC3ZgThb3m2fcPy3IoeVHOrbvnrTgJ2LI8JB8AE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/pagos/contrato/6",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "pagos",
+            "contrato",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reseteo",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVpc3Byb2Zlc3NvckBnbWFpbC5jb20iLCJGdWxsTmFtZSI6Ikx1aXMgTWVyY2FkbyAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJQcm9waWV0YXJpbyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTc2MDEwOTIwOCwiaXNzIjoiaW5tb2JpbGlhcmlhVUxQIiwiYXVkIjoibW9iaWxlQVBQIn0.W9AQUqIihFRL7jA_yLOro0CGFXzTT-CP8Z8nXDmUZMo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://capacitacion.alwaysdata.net/api/propietarios/fix-id3",
+          "protocol": "https",
+          "host": [
+            "capacitacion",
+            "alwaysdata",
+            "net"
+          ],
+          "path": [
+            "api",
+            "propietarios",
+            "fix-id3"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

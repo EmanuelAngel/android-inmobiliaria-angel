@@ -2,6 +2,9 @@
 
 **Base URL:** https://capacitacion.alwaysdata.net/
 
+> [!TIP]
+> Una colección de Postman con todos los endpoints configurados está disponible en: `collection/API-Inmobiliaria.postman_collection.json`
+
 ---
 
 ## Autenticación
