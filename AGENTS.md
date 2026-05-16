@@ -28,6 +28,10 @@ Sistema de gestión inmobiliaria para el proyecto integrador de la asignatura "D
 ## Workflow & Conventions
 - **Commits:** Seguir estrictamente **Conventional Commits** (ej: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`). **Los mensajes de commit deben ser siempre en inglés.**
 - **Status Tracking:** Mantener actualizado el archivo `STATUS.md` en la raíz del proyecto tras completar cada hito o funcionalidad de una entrega.
+- **Testing & Verification:**
+    - Maestro CLI es la herramienta oficial para tests funcionales (E2E).
+    - **Obligatoriedad:** Al finalizar cualquier feature o corrección, se DEBE ofrecer al usuario ejecutar los tests existentes (`.maestro/`) o crear nuevos tests específicos para la lógica implementada.
+    - Integrar la verificación con Maestro dentro del ciclo SDD cuando esté activo.
 - **Idioma:** Todo el código (comentarios, logs, strings de la UI) debe estar en **Español**. No es necesaria la internacionalización.
 - **Testing:** No se requieren pruebas unitarias ni instrumentales por el momento.
 

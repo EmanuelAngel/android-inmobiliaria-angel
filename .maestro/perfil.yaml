@@ -1,0 +1,10 @@
+appId: com.angelemanuel.inmobiliariaangel
+---
+- runFlow: login.yaml
+- tapOn: "Open navigation drawer"
+- tapOn: "Perfil"
+- assertVisible: "Mi Perfil"
+- assertVisible: "luisprofessor@gmail.com" # Verifica que los datos del propietario se cargaron de la API
+- assertVisible: "DNI:"
+- assertVisible: "Nombre:"
+- assertVisible: "Editar"

@@ -1,0 +1,9 @@
+appId: com.angelemanuel.inmobiliariaangel
+---
+- launchApp
+- runFlow:
+    when:
+      visible: "Iniciar Sesión"
+    commands:
+      - tapOn: "Iniciar Sesión"
+- assertVisible: "Inicio"
